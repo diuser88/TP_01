@@ -12,10 +12,7 @@ public class Utilities {
     }
 
     public static boolean isNrCarteValide(int nombre){
-        if(nombre < 1 || nombre > 4){
-            return false;
-        }
-        return true;
+        return nombre >= 1 && nombre <= 4;
     }
 
     public static boolean isGagnante(BingoCard card){

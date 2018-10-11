@@ -10,7 +10,6 @@ public class AnnonceCard implements IBingoGameSet<BingoBall>{
     private LinkedList[] card;
 
 
-
     public AnnonceCard(){
         this.colonne = 5;
         this.ligne = 15;
@@ -23,7 +22,9 @@ public class AnnonceCard implements IBingoGameSet<BingoBall>{
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("| B  | I  |  N |  G | O  |\n");
+        for (int l = 0; l < 26; l++)
+            str.append("-");
+        str.append("\n| B  | I  |  N |  G | O  |\n");
         for (int l = 0; l < 26; l++)
             str.append("-");
 

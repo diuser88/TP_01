@@ -28,13 +28,6 @@ public class Joueur extends Personne{
         this.nb_victoires = 0;
     }
 
-    public void verifierCarts(BingoBall bingoBall){
-        for (BingoCard card: this.cards
-             ) {
-            card.entrerBallinCarte(bingoBall);
-        }
-    }
-
     public Joueur(String nom){
         super(nom);
         this.nb_parties_jouees = 0;
@@ -48,15 +41,6 @@ public class Joueur extends Personne{
         for(int i = 0; i < 4; i ++){
             this.cards.add(new BingoCard(i+1));
         }
-    }
-
-    public String afficherCard(int numeroCard){
-        return this.nomJoueur +
-                "\n" +
-                "Card Number : " +
-                (numeroCard + 1) +
-                "\n" +
-                this.cards.get(numeroCard);
     }
 
     public List<BingoCard> getCards() {

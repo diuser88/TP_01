@@ -20,39 +20,41 @@ public class Controller {
         Scanner reader = new Scanner(System.in);
         String nom = reader.next();
         Joueur joueur = new Joueur(nom);
-        System.out.println(menu());
 
         int choix = -1;
         while (choix != 0){
+            System.out.println(menu());
+            choix = reader.nextInt();
             switch (choix){
                 case 1:
                     Bingo bingo = new Bingo(joueur);
-                    choix = reader.nextInt();
+                    bingo.jouerPartie();
                     break;
+
                 case 2:
                     BlackJack blackJack = new BlackJack();
-                    choix = reader.nextInt();
                     break;
+
                 case 3:
                     Pendu pendu = new Pendu();
-                    choix = reader.nextInt();
                     break;
+
                 case 4:
                     Statistique statistique = new Statistique();
-                    choix = reader.nextInt();
                     break;
 
+                case 0:
+                    System.out.println("Goodbye!...");
+                    break;
 
+                default:
+                    System.out.println("Entrez un nombre valide: ");
+                    break;
             }
         }
-
-
-
-
     }
 
     public static String menu(){
-
         String str = "";
         str += "\t  Menu\n";
         str += " --------------------------------\n";
@@ -62,9 +64,6 @@ public class Controller {
         str += "|\t4 - statistiques des jeux\t |\n";
         str += "|\t0 - Quiter\t\t\t\t\t |\n";
         str += " --------------------------------\n";
-
         return str;
-
     }
-
 }

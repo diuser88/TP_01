@@ -61,7 +61,7 @@ public class BingoCard {
         return str.toString();
     }
 
-    public void entrerBallinCarte(BingoBall ball){
+    public void enterBallInCard(BingoBall ball){
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 if(this.card[i][j] == ball.getNumero().getNumero()){
